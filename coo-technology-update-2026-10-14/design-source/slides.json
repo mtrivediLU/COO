@@ -1,0 +1,409 @@
+{
+  "meta": {
+    "title": "Economic Development: Technology Progress and Next Steps",
+    "presenter": "Mihir Trivedi, IT Specialist, Chiefs of Ontario",
+    "audience": "Nima and Chiefs of Ontario management",
+    "aspect": "16:9",
+    "baseSize": [
+      1920,
+      1080
+    ],
+    "footer": "Economic Development · Technology progress and next steps",
+    "pptx": "../downloads/coo-technology-update-2026-10-14.pptx",
+    "status": "Awaiting approval — freeze on approval",
+    "revision": "Screenshots added; report preview slide inserted; speaker notes removed"
+  },
+  "slides": [
+    {
+      "id": 1,
+      "label": "01 Title",
+      "layout": "title-red",
+      "background": "#BB0A12",
+      "logo": "../assets/coo-logo-reversed-white.png",
+      "title": "Economic Development: Technology Progress and Next Steps",
+      "presenter": {
+        "name": "Mihir Trivedi",
+        "role": "IT Specialist, Chiefs of Ontario"
+      },
+      "workstreamsHeading": "Three workstreams",
+      "workstreams": [
+        {
+          "n": "01",
+          "text": "First Nations Business Directory portal migration",
+          "tag": "Primary focus"
+        },
+        {
+          "n": "02",
+          "text": "Grants & Funding Tracker"
+        },
+        {
+          "n": "03",
+          "text": "Secure business verification with Makwa7"
+        }
+      ],
+      "referenceImage": "../reference-documents/slide-01.png",
+      "links": []
+    },
+    {
+      "id": 2,
+      "label": "02 FNBD portal migration",
+      "layout": "status-groups",
+      "eyebrow": "Workstream 1 · FNBD migration",
+      "title": "FNBD portal migration",
+      "statement": "COO now owns and operates the survey, data files and Power BI report.",
+      "qualifier": "The migration is complete. Business and staff survey submissions now reach COO’s SimpleSurvey account. The report uses COO’s OneDrive files; adding recent responses to it remains manual.",
+      "groups": [
+        {
+          "status": "complete",
+          "heading": "Complete · transferred from IFSD to COO",
+          "items": [
+            {
+              "label": "Survey",
+              "title": "SimpleSurvey projects transferred",
+              "detail": "Existing survey links kept active"
+            },
+            {
+              "label": "Data",
+              "title": "Data sources moved to COO OneDrive",
+              "detail": "Power BI connections validated"
+            },
+            {
+              "label": "Report",
+              "title": "Published through COO’s Power BI account"
+            },
+            {
+              "label": "Maps",
+              "title": "Azure Maps enabled and tested"
+            }
+          ]
+        },
+        {
+          "status": "pending",
+          "heading": "Remaining",
+          "items": [
+            {
+              "label": "Website",
+              "title": "Replacement follows final review",
+              "detail": "WordPress access is ready"
+            }
+          ]
+        }
+      ],
+      "referenceImage": "../reference-documents/slide-02.png",
+      "links": []
+    },
+    {
+      "id": 3,
+      "label": "03 Current survey data",
+      "layout": "equation-plus-split-bar",
+      "eyebrow": "Workstream 1 · FNBD migration",
+      "title": "Current survey data",
+      "equation": [
+        {
+          "value": "735",
+          "label": "Business-submitted responses"
+        },
+        {
+          "op": "+"
+        },
+        {
+          "value": "490",
+          "label": "Staff / approved-user responses"
+        },
+        {
+          "op": "="
+        },
+        {
+          "value": "1,225",
+          "label": "Submitted responses collected",
+          "accent": true
+        }
+      ],
+      "footnote": "66 incomplete responses excluded",
+      "sources": [
+        "COO Portal Operations v1.1",
+        "DailyExportCOOPortalMainSurvey-12-oct(1).xlsx",
+        "DailyExportCOOPortalCOOUseSurvey-12-oct-small.xlsx"
+      ],
+      "rules": [
+        "Never label response counts as unique businesses.",
+        "43 is part of 1,225; never add it again.",
+        "Keep the 912 filtered count (slide 4) separate from these overall figures."
+      ],
+      "referenceImage": "../reference-documents/slide-03.png",
+      "links": [],
+      "subtitle": "As of October 13, 2026",
+      "split": {
+        "heading": "Where the 1,225 responses are now",
+        "segments": [
+          {
+            "value": 1182,
+            "label": "In the current Power BI dataset",
+            "style": "solid #BB0A12"
+          },
+          {
+            "value": 43,
+            "label": "Awaiting processing",
+            "detail": "Already included in the 1,225",
+            "style": "3px dashed #000 outline",
+            "minWidthPx": 64
+          }
+        ]
+      },
+      "tag": {
+        "text": "Response counts, not unique businesses",
+        "detail": "The unique-business count requires duplicate review"
+      }
+    },
+    {
+      "id": 4,
+      "label": "04 COO report preview",
+      "layout": "report-preview",
+      "eyebrow": "Workstream 1 · FNBD migration",
+      "title": "COO report preview",
+      "screenshot": {
+        "asset": "../assets/coo-power-bi-report.png",
+        "size": [
+          3440,
+          1915
+        ],
+        "display": "height 690px at 1920 base, aspect locked, 2px #E0DFD9 border, no other frame"
+      },
+      "filteredView": {
+        "heading": "Filtered view",
+        "caption": "Current COO report, filtered to Ontario: 912 submitted records. Counts change with filters; duplicate review is pending."
+      },
+      "overallDataset": {
+        "heading": "Overall dataset",
+        "text": "1,225 collected; 1,182 in Power BI (slide 3)"
+      },
+      "cta": {
+        "text": "View COO Power BI report",
+        "href": null,
+        "hrefPlaceholder": "#power-bi-report-url-needed",
+        "status": "MISSING URL",
+        "target": "_blank"
+      },
+      "links": [
+        {
+          "text": "View COO Power BI report",
+          "href": null,
+          "status": "MISSING URL — supply before release"
+        }
+      ],
+      "referenceImage": "../reference-documents/slide-04.png"
+    },
+    {
+      "id": 5,
+      "label": "05 Recent submissions",
+      "layout": "position-plus-process",
+      "eyebrow": "Workstream 1 · FNBD migration",
+      "title": "Recent submissions and next steps",
+      "currentPosition": {
+        "heading": "Current position",
+        "lines": [
+          "New survey submissions reach COO’s SimpleSurvey account.",
+          "Adding recent responses to the report is still a manual step."
+        ]
+      },
+      "process": {
+        "heading": "Next step · manual, led by Mihir",
+        "steps": [
+          "Process recent responses",
+          "Check duplicates",
+          "Map locations",
+          "Greg reviews the update",
+          "Refresh the report"
+        ]
+      },
+      "future": {
+        "heading": "Planned",
+        "tag": "Then",
+        "text": "Automate this recurring process"
+      },
+      "approvedNextStepText": "Mihir will manually process recent responses, check duplicates and map locations, and have Greg review the update before refreshing the report. Mihir will then work on automating this recurring process.",
+      "referenceImage": "../reference-documents/slide-05.png",
+      "links": []
+    },
+    {
+      "id": 6,
+      "label": "06 Grants tracker",
+      "layout": "screenshot-plus-timeline",
+      "eyebrow": "Workstream 2 · Grants",
+      "title": "Grants & Funding Tracker",
+      "subtitle": "Making funding opportunities easier to find",
+      "screenshot": {
+        "asset": "../assets/grants-tracker.png",
+        "size": [
+          1010,
+          527
+        ],
+        "crop": "search box, filters, result count, Clear filters and first grant card; browser chrome, WordPress admin bar, site header/hero and sidebar removed"
+      },
+      "value": "Value to COO: grant information is easier to browse, with less need to search through a spreadsheet.",
+      "timeline": [
+        {
+          "status": "complete",
+          "label": "Built",
+          "text": "Search grants, filter opportunities, view eligibility, deadlines and application links"
+        },
+        {
+          "status": "complete",
+          "label": "Demonstrated",
+          "text": "Working prototype on a standalone WordPress page"
+        },
+        {
+          "status": "complete",
+          "label": "Collaborated",
+          "text": "Communications requested font, wording and source-edition updates"
+        },
+        {
+          "status": "pending",
+          "label": "Next",
+          "text": "Complete updates and internal review; agree hosting and maintenance"
+        }
+      ],
+      "statusTag": "Not yet publicly launched",
+      "referenceImage": "../reference-documents/slide-06.png",
+      "links": []
+    },
+    {
+      "id": 7,
+      "label": "07 Makwa7 workflow",
+      "layout": "workflow",
+      "eyebrow": "Workstream 3 · Makwa7",
+      "title": "Secure business verification with Makwa7",
+      "subtitle": "A secure process for collecting documents and verifying First Nations businesses",
+      "zones": [
+        {
+          "label": "Business",
+          "steps": [
+            1
+          ]
+        },
+        {
+          "label": "Private · supporting documents in M-Files",
+          "steps": [
+            2,
+            3,
+            4
+          ],
+          "surface": "#E0DFD9"
+        },
+        {
+          "label": "Result",
+          "steps": [
+            5
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "title": "Business registration",
+          "text": "Completes SimpleSurvey; receives a unique business ID"
+        },
+        {
+          "n": 2,
+          "title": "Document submission",
+          "text": "Makwa7 upload portal: ID, email and supporting documents"
+        },
+        {
+          "n": 3,
+          "title": "Secure storage in M-Files",
+          "text": "Makwa7 data centre on First Nation land in Kamloops"
+        },
+        {
+          "n": 4,
+          "title": "Business verification",
+          "text": "Verification Officer reviews the application"
+        },
+        {
+          "n": 5,
+          "title": "Verification result",
+          "text": "Business ID and verification status recorded once approved"
+        }
+      ],
+      "returnLoop": {
+        "from": 4,
+        "to": 2,
+        "text": "If information is missing: the business is asked to upload additional documents"
+      },
+      "output": {
+        "text": "Sent to downstream storage for directory and reporting use",
+        "destination": "To be confirmed"
+      },
+      "keyMessage": "Power BI supports the public business directory. M-Files manages the private documents and verification process behind it.",
+      "referenceImage": "../reference-documents/slide-07.png",
+      "links": []
+    },
+    {
+      "id": 8,
+      "label": "08 Makwa7 status",
+      "layout": "status-vs-next",
+      "eyebrow": "Workstream 3 · Makwa7",
+      "title": "Makwa7: current status and next steps",
+      "currentStatus": [
+        "Makwa7 configured the document upload and M-Files verification workflow",
+        "Makwa7 introduced the workflow and began onboarding COO staff",
+        "COO purchased a dedicated verification workstation",
+        "COO is reviewing the VM option for a controlled connection to Makwa7’s environment"
+      ],
+      "nextSteps": [
+        {
+          "group": "Access",
+          "text": "M-Files training; test access for Sonnet and Mihir"
+        },
+        {
+          "group": "Infrastructure",
+          "text": "Confirm VM scope, cost and responsibilities; secure the COO workstation"
+        },
+        {
+          "group": "Testing",
+          "text": "End-to-end test with sample businesses, including additional-document requests"
+        },
+        {
+          "group": "Integration",
+          "text": "Confirm how verification status reaches COO OneDrive and Power BI"
+        },
+        {
+          "group": "Operations",
+          "text": "Document procedure, access management and support"
+        }
+      ],
+      "myRole": "Coordinate the COO technical setup, test the complete data flow and document the process for ongoing operation.",
+      "openPoint": {
+        "heading": "Open point · to be confirmed",
+        "text": "Makwa7 mentioned Google Drive and OneDrive as outputs. COO’s final destination and its Power BI connection still need confirmation."
+      },
+      "referenceImage": "../reference-documents/slide-08.png",
+      "links": []
+    },
+    {
+      "id": 9,
+      "label": "09 Priorities and discussion",
+      "layout": "summary-close",
+      "eyebrow": "Summary",
+      "title": "Immediate priorities and discussion",
+      "columns": [
+        {
+          "title": "FNBD",
+          "primary": true,
+          "text": "Process recent responses, check duplicates and map locations, then refresh the report after Greg’s review. Website replacement follows final review.",
+          "next": "Next phase: automate the recurring process."
+        },
+        {
+          "title": "Makwa7",
+          "text": "Complete training and test access, confirm VM arrangements, test the verification workflow and confirm the reporting integration."
+        },
+        {
+          "title": "Grants tracker",
+          "text": "Finish Communications updates, complete internal review and agree on hosting and maintenance."
+        }
+      ],
+      "closing": "Discussion and guidance on next steps",
+      "referenceImage": "../reference-documents/slide-09.png",
+      "links": []
+    }
+  ]
+}

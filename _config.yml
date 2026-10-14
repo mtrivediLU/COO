@@ -1,0 +1,7 @@
+# Keep the existing GitHub Pages branch deployment and portfolio intact.
+exclude:
+  - README.md
+  - scripts
+  - coo-technology-update-2026-10-14/design-source
+  - coo-technology-update-2026-10-14/reference-documents
+  - coo-technology-update-2026-10-14/README.md
