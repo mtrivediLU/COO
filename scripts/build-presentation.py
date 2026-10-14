@@ -35,7 +35,7 @@ for i, slide in enumerate(slides, 1):
     if i in range(2,9):
         slide.find_all(recursive=False)[-1]['class'] = ['slide-footer']
     if i == 4:
-        a = slide.select_one('a[href="#power-bi-report-url-needed"]')
+        a = slide.select_one('a[data-link="power-bi-report"]')
         href = data['slides'][3]['cta']['href']
         if href: a['href'] = href
         else:
@@ -71,7 +71,28 @@ html += '''</div></main><nav class="controls" aria-label="Presentation controls"
 <button id="next" aria-label="Next slide">Next →</button><button id="fullscreen" aria-label="Enter fullscreen">Fullscreen</button>
 <a class="download" href="downloads/coo-technology-update-2026-10-14.pptx" download>Download PowerPoint</a></nav></body></html>'''
 (P/'index.html').write_text(html)
-# Preserve all native editable slide shapes; remove notes and dangling relationships.
+# Preserve native shapes and XML formatting; hyperlink the report label and red button.
+report_url = data['slides'][3]['cta']['href']
+report_link_id = 'rIdPowerBiReport'
+def link_report_button(content):
+    shapes = list(re.finditer(rb'<p:sp>.*?</p:sp>', content, re.S))
+    matches = [i for i, m in enumerate(shapes) if b'View COO Power BI report' in m.group()]
+    assert len(matches) == 1, 'Expected exactly one Power BI report CTA'
+    i = matches[0]
+    targets = [shapes[i]]
+    # The approved export stores the red rectangle separately from its text.
+    background = shapes[i-1]
+    assert b'BB0A12' in background.group() and b'<a:t>' not in background.group()
+    targets.append(background)
+    for match in sorted(targets, key=lambda m: m.start(), reverse=True):
+        shape = match.group()
+        hyperlink = f'<a:hlinkClick r:id="{report_link_id}"/>'.encode()
+        assert shape.count(b'</p:cNvPr>') == 1
+        shape = shape.replace(b'</p:cNvPr>', hyperlink + b'</p:cNvPr>')
+        content = content[:match.start()] + shape + content[match.end():]
+    return content
+
+# Remove all notes and their relationships, then add the confirmed destination.
 with zipfile.ZipFile(P/'design-source/coo-technology-update-original.pptx') as source, zipfile.ZipFile(P/'downloads/coo-technology-update-2026-10-14.pptx','w',zipfile.ZIP_DEFLATED) as output:
     for name in source.namelist():
         if 'notesSlides' in name or 'notesMasters' in name: continue
@@ -80,8 +101,16 @@ with zipfile.ZipFile(P/'design-source/coo-technology-update-original.pptx') as s
             tree = ET.fromstring(content)
             for el in list(tree):
                 if 'notesSlide' in str(el.attrib) or 'notesMaster' in str(el.attrib): tree.remove(el)
+            if name == 'ppt/slides/_rels/slide4.xml.rels' and report_url:
+                assert not any(el.get('Id') == report_link_id for el in tree)
+                ET.SubElement(tree, '{http://schemas.openxmlformats.org/package/2006/relationships}Relationship', {
+                    'Id': report_link_id,
+                    'Type': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink',
+                    'Target': report_url, 'TargetMode': 'External'})
             content = ET.tostring(tree,encoding='utf-8',xml_declaration=True)
         elif name == 'ppt/presentation.xml':
             content = re.sub(rb'<p:notesMasterIdLst>.*?</p:notesMasterIdLst>',b'',content,flags=re.S)
+        if name == 'ppt/slides/slide4.xml' and report_url:
+            content = link_report_button(content)
         output.writestr(name,content)
 print('Built nine approved slides and notes-free editable PowerPoint.')

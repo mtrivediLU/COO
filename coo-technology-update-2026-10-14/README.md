@@ -18,6 +18,8 @@ python3 scripts/build-presentation.py
 
 The generator preserves the approved markup and editable PPTX shapes. The supplied `deck-stage.js` is archived only; the production shell has no presenter notes, authoring controls, or external runtime dependencies. The Claude preview's unsupplied `support.js` is not required by the website.
 
-## Outstanding source information
+## Content hyperlinks
 
-The handoff, HTML, JSON, and PPTX contain no actual Power BI report or Grants Tracker URLs. The website preserves the report CTA visually as a disabled label until the real URL is supplied; it does not publish a fake destination. Add the confirmed URLs to the structured content and both exports before treating external hyperlink verification as complete.
+The user supplied the Power BI report URL after the initial deployment. It is stored in `design-source/slides.json` and the source HTML. The generator applies it to the web CTA and to both the native PowerPoint button rectangle and label, preserving their appearance.
+
+The Grants Tracker URL is still missing. No destination is invented; add the confirmed URL to both exports when supplied.

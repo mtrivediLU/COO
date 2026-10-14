@@ -1,3 +1,5 @@
+> Implementation update: the user supplied the Power BI URL after initial deployment. The confirmed destination is recorded in `../design-source/slides.json` and applied to the website and PowerPoint. The missing-URL statements below describe the original handoff; only the Grants Tracker URL remains outstanding.
+
 # Developer handoff — COO Economic Development technology update
 
 Status: **design awaiting approval.** Once approved, this design is frozen. Implement it as shown; do not redesign.

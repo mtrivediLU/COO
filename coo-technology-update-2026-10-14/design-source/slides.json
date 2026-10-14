@@ -179,16 +179,15 @@
       },
       "cta": {
         "text": "View COO Power BI report",
-        "href": null,
-        "hrefPlaceholder": "#power-bi-report-url-needed",
-        "status": "MISSING URL",
+        "href": "https://app.powerbi.com/view?r=eyJrIjoiNWEwOTJjNjAtNDBlNS00YTZiLTkyZTYtNWQ5Y2VkNTM1NmQxIiwidCI6ImEyMWJkZWI4LTI2YjQtNDNlMy1iNDcwLWQ5NDg3NGYzODNlYiJ9",
+        "status": "URL supplied by user",
         "target": "_blank"
       },
       "links": [
         {
           "text": "View COO Power BI report",
-          "href": null,
-          "status": "MISSING URL — supply before release"
+          "href": "https://app.powerbi.com/view?r=eyJrIjoiNWEwOTJjNjAtNDBlNS00YTZiLTkyZTYtNWQ5Y2VkNTM1NmQxIiwidCI6ImEyMWJkZWI4LTI2YjQtNDNlMy1iNDcwLWQ5NDg3NGYzODNlYiJ9",
+          "status": "URL supplied by user"
         }
       ],
       "referenceImage": "../reference-documents/slide-04.png"
